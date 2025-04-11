@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="./images/drums.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
+    <title>Drum Kit</title>
+    <script>
+        window.onload = function () {
+            let osCSS = document.createElement('link');
+            osCSS.rel = 'stylesheet';
+            osCSS.type = 'text/css';
+
+            // Check if the device supports touch
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+                // Check if the device has a mouse or keyboard (pointer device)
+                if (window.matchMedia("(pointer: coarse)").matches) {
+                    // If it's a touch-only device (tablet, touch-only laptop)
+                    osCSS.href = 'styles1.css';
+                } else {
+                    // If the device supports touch and has a keyboard or mouse (desktop, touch laptop)
+                    osCSS.href = 'styles.css';
+                }
+            } else {
+                // No touch support.
+                osCSS.href = 'styles.css';
+            }
+
+            document.head.appendChild(osCSS);
+        };
+
+    </script>
+</head>
+
+<body>
+    <h1>Drum 🥁 Kit</h1>
+    <p>click the buttons below to play sounds. NOTICE That on Pc You Can use the keyboard (w, a, s, d, j, k,
+        l) keys. </p>
+    <div class="set">
+        <button class="w drum">w</button>
+        <button class="a drum">a</button>
+        <button class="s drum">s</button>
+        <button class="d drum">d</button>
+        <button class="j drum">j</button>
+        <button class="k drum">k</button>
+        <button class="l drum">l</button>
+    </div>
+
+    <script>
+        function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+
+            script.onerror = function () {
+                console.error(`Error loading script: ${src}`);
+            };
+
+            script.onload = function () {
+                if (callback) callback();
+            };
+
+            document.head.appendChild(script);
+        }
+
+        function isTouchOnly() {
+            return ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.matchMedia("(pointer: coarse)").matches;
+        }
+
+        function isTouchAndKeyboard() {
+            // If it supports touch, but the pointer is not coarse (meaning it has a keyboard or mouse)
+            return ('ontouchstart' in window || navigator.maxTouchPoints > 0) && !window.matchMedia("(pointer: coarse)").matches;
+        }
+
+        function isKeyboardOnly() {
+            return !('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        }
+
+        if (isTouchOnly()) {
+            loadScript('index1.js');
+        } else if (isTouchAndKeyboard()) {
+            loadScript('index.js');
+        } else if (isKeyboardOnly()) {
+            loadScript('index.js');
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+body {
+  text-align: center;
+  background-color: #283149;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  text-shadow: 3px 0 #DA0463;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+
+.w {
+  background-image: url("images/tom1.png");
+  background-size: 100% 100%;
+}
+
+.a {
+  background-image: url("images/tom2.png");
+  background-size: 100% 100%;
+
+}
+
+.s {
+  background-image: url("images/tom3.png");
+  background-size: 100% 100%;
+
+}
+
+.d {
+  background-image: url("images/tom4.png");
+  background-size: 100% 100%;
+
+}
+
+.j {
+  background-image: url("images/snare.png");
+  background-size: 100% 100%;
+
+}
+
+.k {
+  background-image: url("images/crash.png");
+  background-size: 100% 100%;
+
+}
+
+.l {
+  background-image: url("images/kick.png");
+  background-size: 100% 100%;
+
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 0.04px;
+  color: orange;
+  border-radius: 12px;
+  display: inline-block;
+  width: 160px;
+  height: 150px;
+  margin: 8px;
+  background-color: white;
+  cursor: pointer;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.press {
+  color: green;
+  text-align: end;
+  opacity: 0.5;
+  box-shadow: 10px 10px 0 gold;
+}
+
+p {
+  background: linear-gradient(to right, #f00, #ff0, #0ff, #0f0, #00f);
+  background-size: 300% 300%;
+  color: transparent;
+  font-size: 20px;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+  -webkit-animation: shine 5s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 100%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 3rem;
+    margin-top: -5px;
+    margin-bottom: -10px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+}
+
+@media screen and (max-width: 630px) {
+  .drum {
+    width: 160px;
+  }
+
+}
+
+@media screen and (max-width: 590px) {
+  .drum {
+    width: 40%;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .drum {
+    width: 45%;
+    height: 100px;
+    margin: 2px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+
+  }
+}
+
+@media screen and (max-width: 377px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .drum {
+    width: 45%;
+    height: 210;
+
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 327px) {
+  h1 {
+    font-size: 1.95rem;
+
+  }
+
+  .drum {
+
+    height: 110px;
+    margin: 3px;
+
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
